@@ -1,0 +1,194 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+
+
+  .dynamic-content {
+    flex: 68%;
+
+    header {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .progress-bar {
+          display: flex;
+          width: 100%;
+          height: 10px;
+          background-color: white;
+
+        .block {
+            flex: 1;
+            transition: background-color 0.3s ease;
+            &.completed {
+                background-color: blue;
+            }
+        }
+      }
+
+      img {
+        width: 10.6%;
+        padding-block: 2.5rem;
+        padding-inline: 5.625rem;
+      }
+
+    }
+
+    .central-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      margin-inline: auto;
+      margin-block: 7.313rem 13.625rem;
+
+      .top-section {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+
+        .back-link {
+          display: flex;
+          text-decoration: none;
+          font-size: 1rem;
+          color: #14142B;
+
+          .back-arrow {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.438rem;
+            color: #14142B;
+          }
+        }
+      }
+
+      .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .avatar-container {
+          width: 10%;
+          justify-content: flex-start;
+          align-self: flex-start;
+
+          .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-block: 1em;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .text-container {
+          flex: 1;
+          padding-left: 20px;
+          margin-block: 0.5rem;
+
+          .block-indicator {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 28px;
+            letter-spacing: 0.75px;
+          }
+
+          .welcome-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 32px;
+            letter-spacing: 0.75px;
+          }
+        }
+      }
+
+      .selector-container {
+        width: 100%;
+        height: 6.25rem;
+        display: flex;
+        justify-content: space-between;
+
+        .selector-option {
+          display: flex;
+          align-items: center;
+          border: 1px solid #D9D9D9;
+          border-radius: 1.5rem;
+          width: 19.5rem;
+          padding: 1.5rem;
+
+          &:first-child {
+            margin-right: 2rem;
+          }
+
+          input[type="checkbox"] {
+            display: none;
+          }
+
+          .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid gray;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: inline-block;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              margin: 3px;
+              background-color: blue;
+              opacity: 0;
+            }
+          }
+
+          input[type="checkbox"]:checked + .custom-checkbox {
+            border-color: blue;
+          }
+
+          input[type="checkbox"]:checked + .custom-checkbox::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .bottom-section {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 80%;
+      margin-inline: auto;
+
+      .next-button {
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .static-content {
+    flex: 32;
+    height: 100vh;
+    background-color: #f5f5f5;
+
+    p {
+      padding: 2rem;
+    }
+  }
+}
