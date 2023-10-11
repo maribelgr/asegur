@@ -1,2 +1,70 @@
-<p>step4 works!</p>
-<a routerLink="/step5">Ir a Nombre Componente 5</a>
+<div class="app-container">
+  <div class="dynamic-content">
+    <header>
+          <div class="progress-bar">
+              <div class="block completed"></div>
+              <div class="block completed"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+          </div>
+          <img src="./assets/logos/logotipo-asisa.svg" alt="Logotipo Asisa">
+    </header>
+    <div class="central-container">
+        <div class="top-section">
+            <a routerLink="/step3" class="back-link">
+              <img src="./assets/icons/back-arrow.png" alt="Flecha de atrás" class="back-arrow">
+            </a>
+        </div>
+
+        <div class="main-content">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <img src="./assets/images/ellipse-4.png" alt="Avatar de usuario">
+                </div>
+            </div>
+            <div class="text-container">
+                <p class="block-indicator">Bloque 2 de 4</p>
+                <p class="welcome-text">¡Cuidar de su salud siempre es lo primero! Ahora necesito saber un poco más sobre vosotros, ¿cuál es tu rango de edad?</p>
+            </div>
+        </div>
+
+        <div class="card-selector-container">
+
+          <div class="card" [class.selected]="isSelected(1)" (click)="selectCard($event, 1)">
+              <p>18-30 años</p>
+              <input type="checkbox" [checked]="isSelected(1)" id="checkbox1" class="custom-checkbox">
+              <label for="checkbox1" (click)="handleLabelClick($event)" class="checkbox-label"></label>
+          </div>
+
+          <div class="card" [class.selected]="isSelected(2)" (click)="selectCard($event, 2)">
+            <p>30-60 años</p>
+            <input type="checkbox" [checked]="isSelected(2)" id="checkbox2" class="custom-checkbox">
+            <label for="checkbox2" (click)="handleLabelClick($event)" class="checkbox-label"></label>
+          </div>
+
+          <div class="card" [class.selected]="isSelected(3)" (click)="selectCard($event, 3)">
+            <p>+60 años</p>
+            <input type="checkbox" [checked]="isSelected(3)" id="checkbox3" class="custom-checkbox">
+            <label for="checkbox3" (click)="handleLabelClick($event)" class="checkbox-label"></label>
+          </div>
+
+        </div>
+
+    </div>
+    <div class="bottom-section">
+      <button class="next-button" routerLink="/step5">Siguiente</button>
+      <span>o pulsa intro</span>
+    </div>
+  </div>
+  <div class="static-content">
+    <div class="resume-container">
+      <p>Resumen de tu seguro de salud</p>
+    </div>
+    <div class="user-data">
+      <p>Ricardo Sánchez</p>
+      <p>Pareja</p>
+      <p>Hijos</p>
+    </div>
+  </div>
+</div>
+

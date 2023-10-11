@@ -1,2 +1,86 @@
-<p>step3 works!</p>
-<a routerLink="/step4">Ir a Nombre Componente 4</a>
+<div class="app-container">
+  <div class="dynamic-content">
+    <header>
+          <div class="progress-bar">
+              <div class="block completed"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+          </div>
+          <img src="./assets/logos/logotipo-asisa.svg" alt="Logotipo Asisa">
+    </header>
+    <div class="central-container">
+        <div class="top-section">
+            <a routerLink="/step2" class="back-link">
+              <img src="./assets/icons/back-arrow.png" alt="Flecha de atrás" class="back-arrow">
+            </a>
+        </div>
+
+        <div class="main-content">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <img src="./assets/images/ellipse-4.png" alt="Avatar de usuario">
+                </div>
+            </div>
+            <div class="text-container">
+                <p class="block-indicator">Bloque 1 de 4</p>
+                <p class="welcome-text">¡Estupendo, Ricardo! ¿Para quién sería el seguro? (Puedes elegir varias opciones)</p>
+            </div>
+        </div>
+
+        <div class="card-selector-container">
+
+          <div class="card" [class.selected]="isSelected(1)" (click)="selectCard($event, 1)">
+              <div class="icon-container">
+                  <img src="./assets/icons/icon1.png" alt="Icono 1">
+              </div>
+              <p>Para mí</p>
+              <input type="checkbox" [checked]="isSelected(1)" id="checkbox1" class="custom-checkbox">
+              <label for="checkbox1" (click)="handleLabelClick($event)" class="checkbox-label"></label>
+          </div>
+
+          <div class="card" [class.selected]="isSelected(2)" (click)="selectCard($event, 2)">
+            <div class="icon-container">
+              <img src="./assets/icons/icon1.png" alt="Icono 2">
+            </div>
+            <p>Para mi pareja</p>
+            <input type="checkbox" [checked]="isSelected(2)" id="checkbox2" class="custom-checkbox">
+            <label for="checkbox2" (click)="handleLabelClick($event)" class="checkbox-label"></label>
+          </div>
+
+          <div class="card" [class.selected]="isSelected(3)" (click)="selectCard($event, 3)">
+            <div class="icon-container">
+              <img src="./assets/icons/icon3.png" alt="Icono 3">
+            </div>
+            <p>Para mis hijos/as</p>
+            <input type="checkbox" [checked]="isSelected(3)" id="checkbox3" class="custom-checkbox">
+            <label for="checkbox3" (click)="handleLabelClick($event)" class="checkbox-label"></label>
+          </div>
+
+          <div class="card" [class.selected]="isSelected(4)" (click)="selectCard($event, 4)">
+            <div class="icon-container">
+                <img src="./assets/icons/icon4.png" alt="Icono 4">
+            </div>
+            <p>Para mis mayores</p>
+            <input type="checkbox" [checked]="isSelected(4)" id="checkbox4" class="custom-checkbox">
+            <label for="checkbox4" (click)="handleLabelClick($event)" class="checkbox-label"></label>
+          </div>
+
+        </div>
+
+    </div>
+    <div class="bottom-section">
+      <button class="next-button" routerLink="/step4">Siguiente</button>
+      <span>o pulsa intro</span>
+    </div>
+  </div>
+  <div class="static-content">
+    <div class="resume-container">
+      <p>Resumen de tu seguro de salud</p>
+    </div>
+    <div class="user-data">
+      <p>Ricardo Sánchez</p>
+    </div>
+  </div>
+</div>
+
